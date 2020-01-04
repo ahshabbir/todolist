@@ -2,13 +2,14 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="reset.css">
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="index.js"></script>
 	</head>
 	<body>
 		<div id="header">
 			<h1>Todolist++</h1>
-			<input type="text"/>
-			<input type="button" value="Add" />
-			<input type="button" value="Clear Done Tasks" />
+			<input type="text" id="new-task-box"/>
+			<input type="button" value="Add" onclick="addTask()"/>
+			<input type="button" value="Clear Done Tasks" onclick="clearFinished()" />
 		</div>
 		<ul id="unfinished-list">
 			<li>Hit the gym</li>
