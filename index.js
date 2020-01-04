@@ -37,8 +37,7 @@ function markDoneHandler(e) {
 
 function markUnDoneHandler(e) {
 	document.getElementById('finished-list').removeChild(this);
-	// Newer tasks are considered higher priority, thus they should be prepended.
-	document.getElementById('unfinished-list').prepend(this);
+	document.getElementById('unfinished-list').appendChild(this);
 
 	// Swap the listeners to enable doing the task:
 	this.removeEventListener('click', markUnDoneHandler, false);
@@ -56,9 +55,7 @@ function addTask() {
 	var newTask = document.createElement("li");
 	newTask.innerText = taskName;
 	newTask.addEventListener('click', markDoneHandler, false);
-
-	// Newer tasks are considered higher priority, thus they should be prepended.
-	todolist.prepend(newTask);
+	todolist.appendChild(newTask);
 }
 
 function clearFinished() {
