@@ -4,6 +4,7 @@
 
 body {
 	font-family: sans-serif;
+	overflow: auto;
 }
 
 #header {
@@ -25,7 +26,7 @@ body {
 	padding: 10px;
 	margin-right: 0;
 	font-size: 1.25em;
-	border: 1px solid gray;
+	border: 1px solid #808080;
 	border-radius: 5px;
 }
 
@@ -40,9 +41,43 @@ body {
 	border: 1px solid black;
 }
 
-
 #input-block {
 	display: inline-block;
+}
+
+#col-space {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-flow: row;
+}
+
+#col-1 {
+	flex: 1;
+	background-color: lightgreen;
+}
+
+#col-2 {
+	flex: 2;
+	/*float: right;*/
+}
+
+ol {
+	list-style-type: none;
+	padding-inline-start: 0;
+	font-size: 1.25em;
+	margin-top: 0;
+}
+
+ol li {
+	padding: 15px;
+	padding-left: 30px;
+	background-color: lightgreen;
+}
+
+ol li:hover {
+	background-color: green;
+	color: white;
 }
 
 ul {
@@ -52,26 +87,47 @@ ul {
 	margin-top: 0;
 }
 
-li {
+ul li {
 	padding: 15px;
 	padding-left: 30px;
 	background-color: lightgray;
 }
 
-ul li:nth-child(even) {
+.unfinished-list li:nth-child(even) {
 	background-color: white;
 }
 
-#finished-list {
+ul li:hover {
+	background-color: #a6a2a2 !important;
+}
+
+.finished-list {
 	margin-top: 0;
 	text-decoration: line-through;
 }
 
-#finished-list li {
-	background-color: gray;
+.finished-list li {
+	background-color: #7b7b7b;
 }
+
+.finished-list li:hover {
+	background-color: #5f5f5f;
+}
+
+
 #addBtn {
 	background-color: lightgreen;
 	padding: 8px;
 	margin: 0;
+}
+
+#mon-list, #tue-list, #wed-list, 
+#thur-list, #fri-list, #sat-list,
+#sun-list {
+	display: none;
+}
+
+.li-active {
+	background-color: green;
+	color: white;
 }
